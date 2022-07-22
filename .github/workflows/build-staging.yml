@@ -49,6 +49,8 @@ jobs:
         with:
           resource-group: mslearn-gh-pipelines-16993
           cluster-name: contoso-video
+          admin: 'false'
+          use-kubelogin: 'true'
           
       - name: Run Helm Deploy
         run: |
