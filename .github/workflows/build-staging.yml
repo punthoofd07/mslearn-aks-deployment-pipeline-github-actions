@@ -49,6 +49,7 @@ jobs:
         with:
           resource-group: mslearn-gh-pipelines-16993
           cluster-name: contoso-video
+          method: service-principal
           admin: 'false'
           use-kubelogin: 'true'
           
