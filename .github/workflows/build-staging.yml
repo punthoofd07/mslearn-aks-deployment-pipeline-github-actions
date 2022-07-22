@@ -38,20 +38,16 @@ jobs:
       - name: Helm tool installer
         uses: Azure/setup-helm@v3
         with:          
-          version: v3.3.1
-          
-      - uses: azure/login@v1
-        with:
-           creds: ${{ secrets.AZURE_CREDENTIALS }}
+          version: v3.3.1      
+           
           
       - name: Get AKS Credentials
-        uses: Azure/k8s-set-context@v3.0
+        uses: Azure/k8s-set-context@v1
         with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           resource-group: mslearn-gh-pipelines-16993
           cluster-name: contoso-video
-          method: service-principal
-          admin: 'false'
-          use-kubelogin: 'true'
+          
           
       - name: Run Helm Deploy
         run: |
